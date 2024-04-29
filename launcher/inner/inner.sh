@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
+#SBATCH --cpus-per-task=2
 #SBATCH --job-name=rl
 #SBATCH --time=240:00:00
 source activate /home/mprattico/miniconda3/envs/policy_gradient_rl
