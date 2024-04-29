@@ -580,3 +580,17 @@ Walker2d-v4:
   gae_lambda: 0.95
   max_grad_norm: 1
   vf_coef: 0.871923
+
+# Not Tuned
+Taxi-v3:
+  n_envs: 4
+  n_timesteps: !!float 5e5
+  policy: 'MlpPolicy'
+  n_steps: 1024
+  gae_lambda: 0.95
+  gamma: 0.9
+  n_epochs: 10
+  ent_coef: 0.0
+  learning_rate: !!float 1e-3
+  clip_range: 0.2
+  use_sde: False
