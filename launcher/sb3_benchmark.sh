@@ -9,7 +9,6 @@ for env in $envs; do
         for seed in $seeds; do
 
             sbatch launcher/cluster/inner/inner_sb3_benchmark.sh $algo $env $seed 
-            sbatch launcher/cluster/inner/inner_sb3_benchmark.sh $algo $env $seed 
 
         done
     done
