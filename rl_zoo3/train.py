@@ -206,16 +206,29 @@ def train() -> None:
 
         run_name = f"{args.env}__{args.algo}__{args.seed}__{int(time.time())}"
         tags = [*args.wandb_tags, f"v{sb3.__version__}"]
-        run = wandb.init(
-            name=run_name,
-            project=args.wandb_project_name,
-            entity=args.wandb_entity,
-            tags=tags,
-            config=vars(args),
-            sync_tensorboard=True,  # auto-upload sb3's tensorboard metrics
-            monitor_gym=True,  # auto-upload the videos of agents playing the game
-            save_code=True,  # optional
-        )
+        try:
+            run = wandb.init(
+                name=run_name,
+                project=args.wandb_project_name,
+                entity=args.wandb_entity,
+                tags=tags,
+                config=vars(args),
+                sync_tensorboard=True,  # auto-upload sb3's tensorboard metrics
+                monitor_gym=True,  # auto-upload the videos of agents playing the game
+                save_code=True,  # optional
+            )
+        except:
+            run = wandb.init(
+                name=run_name,
+                project=args.wandb_project_name,
+                entity=args.wandb_entity,
+                tags=tags,
+                config=vars(args),
+                sync_tensorboard=True,  # auto-upload sb3's tensorboard metrics
+                monitor_gym=True,  # auto-upload the videos of agents playing the game
+                save_code=True,  # optional
+                mode='offline'
+            )
         args.tensorboard_log = f"runs/{run_name}"
 
     exp_manager = ExperimentManager(

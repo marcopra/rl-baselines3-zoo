@@ -1,6 +1,6 @@
 #!/bin/bash
 
-seeds="0 1 2 3"
+seeds="0 1 2 3 4 5 6"
 envs="CartPole-v1 Acrobot-v1 CarRacing-v2 LunarLander-v2" 
 algos="ppo dqn trpo sac" 
 
