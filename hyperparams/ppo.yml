@@ -597,10 +597,6 @@ Taxi-v3:
 
 # Not Tuned
 FrozenLake-v1:
-  - env_kwargs:
-      map_name: '4x4'
-      is_slippery: False
-      desc: None
   n_envs: 4
   n_timesteps: !!float 5e5
   policy: 'MlpPolicy'
