@@ -1,8 +1,8 @@
 #!/bin/bash
 
 seeds="0 1 2 3 4 5 6"
-envs="CartPole-v1 Acrobot-v1 CarRacing-v2 LunarLander-v2" 
-algos="ppo dqn trpo sac" 
+envs="MountainCar-v0" 
+algos="ppo dqn trpo a2c" 
 
 for env in $envs; do
     for algo in $algos; do
